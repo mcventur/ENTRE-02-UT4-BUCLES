@@ -17,7 +17,14 @@ public class Utilidades
      * (usa bucles while)
      */
     public static boolean estaEnOctal(int n) {
-         
+        //Comprobamos para cada dígito no sea mayor que 7
+        while(n>0){
+            if(n%10 > 7){
+                return false;
+            }
+            n/=10;
+        }
+        //Si llegamos aquí sin haber devuelto false, entonces es que todos los dígitos son en octal
         return true;
 
     }
@@ -29,8 +36,13 @@ public class Utilidades
      * (usa bucles while)
      */
     public static int contarCifras(int n) {
-         
-        return 0;
+        
+        int cifras = 0;
+        while(n > 0){
+            n/=10;
+            cifras++;
+        }
+        return cifras;
 
     }
 

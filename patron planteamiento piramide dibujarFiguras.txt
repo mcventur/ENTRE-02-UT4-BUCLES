@@ -1,0 +1,21 @@
+              BBBB
+            BBBB====
+          BBBB====BBBB
+        BBBB====BBBB====
+      BBBB====BBBB====BBBB
+    BBBB====BBBB====BBBB====
+  BBBB====BBBB====BBBB====BBBB
+BBBB====BBBB====BBBB====BBBB====
+
+Ejemplo Con altura = 8
+Buscamos el patrón: con car1 B, car2 =, y bloque 4 
+Fila 1: 14 espacios + bloque B --> (1 bloque)
+Fila 2: 12 espacios + bloque B + bloque = -->(2 bloques)
+Fila 3: (8-3)*2 espacios + bloque B + bloque = + bloque B -->(3 bloques)
+Fila 4: (8-4)*2 espacios + bloque B + bloque = + bloque B + bloque = --> (4 bloques)
+Fila 5: (8-5)*2 espacios + (bloqueB + bloque=, alternando, hasta completa un total de fila bloques)
+...
+Fila 8: (8-8) espacios + (desde 1 a 8 veces (bloqueB para vez impar, bloque= para vez par))
+
+
+Fila n: (altura - fila)*2 espacios  + ( desde 1 a fila veces (4B para vez impar, 4= para vez par) )

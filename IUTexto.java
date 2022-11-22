@@ -40,12 +40,35 @@ public class IUTexto
      */
     private void hacerSumasOctales()
     {
-        
-        
+        char respuesta;
+        do{
+            Pantalla.borrarPantalla();
+            System.out.print("Teclee número1: ");
+            int n1 = teclado.nextInt();
+            System.out.print("Teclee número2: ");
+            int n2 = teclado.nextInt();            
+            if(Utilidades.estaEnOctal(n1) && Utilidades.estaEnOctal(n2) && Utilidades.contarCifras(n1)==Utilidades.contarCifras(n2)){
+                System.out.println("--------------------------------------");
+                System.out.printf("%30d\n",n1);
+                System.out.printf("%30d\n",n2);
+                System.out.printf("%20s%10d\n","Suma octal:",calculadora.sumarEnOctal(n1,n2));
+            }
+            else if(!Utilidades.estaEnOctal(n1) || !Utilidades.estaEnOctal(n2)){
+                System.out.println("Alguno de los números no está en octal");    
+            }
+            else{
+                System.out.println("No tienen el mismo número de cifras");    
+            }
+            teclado.nextLine();
+            System.out.println("¿Quiere hacer otra suma en octal (S/s)?");
+            respuesta = teclado.nextLine().charAt(0);
+            
+        }while(respuesta == 'S' || respuesta == 's');
 
     }
 
     /**
+     *  Borra pantalla
      *  Pide al usuario un valor de altura, 
      *  valida que sea correcto (un valor entre 1 y 10)
      *  y muestra la figura en pantalla
@@ -53,6 +76,22 @@ public class IUTexto
 
     private void dibujarFiguras()
     {
+        int altura;
+        Pantalla.borrarPantalla();
+        System.out.println("Ahora dibujará una figura");
+        System.out.println();
+        
+        do{
+            System.out.print("Altura de la figura? (1-10): ");    
+            altura = teclado.nextInt();
+            if(altura < 1 || altura > 10){
+                System.out.print("Error, ");
+            }
+            else{
+                pintor.dibujarFigura(altura);
+            }
+        }while(altura<1 || altura > 10);
+        
         
     }
 
