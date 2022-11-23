@@ -41,43 +41,5 @@ public class CalculadoraOctal
         return suma;
 
     }
-    
-    public int sumarEnOctalVAitor(int n1, int n2) {
-        int suma= 0; 
-        for(int i = 1 ;n2<0 && n1<0 ;i*=10){
-            int sumadigitos=((n1%10)+(n2%10));
-            int aux=0;
-            n1=n1/10;
-            n2=n2/10;
-            if(sumadigitos<8){
-                suma+=sumadigitos ;
-            }else{
-                aux=sumadigitos/8* (i+10);
-                suma+= aux+((sumadigitos%10)*i);
-            }
-        }
-        return suma;
-    }    
-    
-    
-    public int sumarEnOctalV2Aitor(int n1, int n2) {
-        int suma= 0; 
-        for(int i = 1 ;n2>0 || n1>0 ;i*=10){
-            int sumadigitos=((n1%10)+(n2%10));
-            int aux=0;
-            n1=n1/10;
-            n2=n2/10;
-            if(sumadigitos<=7){
-                suma+=sumadigitos*i;
-            }else{
-                if(sumadigitos/8 >8){
-                    aux=2*aux; 
-                }else{
-                    aux=sumadigitos/8* (i+10);
-                }
-            }    
-            suma+= aux+((sumadigitos%10)*i);
-            }
-        return suma;
-        }    
+
 }
